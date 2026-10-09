@@ -547,6 +547,18 @@
                 </button>
                 <div class="copy-feedback" id="feedbackCH">✅ Скопировано!</div>
             </div>
+
+            <!-- MIX -->
+            <div class="sub-section">
+                <button class="btn btn-primary" id="copyBtnMIX">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                    Получить подписку MIX
+                </button>
+                <div class="copy-feedback" id="feedbackMIX">🚀 Скопировано!</div>
+            </div>
             
             <div class="hint-text">
                 Нажмите, чтобы скопировать ссылку<br>и получить доступ
@@ -627,12 +639,15 @@
             // ===== Ссылки для копирования =====
             const linkBS = 'https://hub.mos.ru/akelladejavu/bunker/-/raw/main/WHITE_LIST.txt';
             const linkCH = 'https://hub.mos.ru/akelladejavu/bunker/-/raw/main/BLACK_LIST.txt';
+            const linkMIX = 'https://hub.mos.ru/akelladejavu/bunker/-/raw/main/BLWL_MIX.txt';
 
             // ===== Элементы =====
             const btnBS = document.getElementById('copyBtnBS');
             const btnCH = document.getElementById('copyBtnCH');
+            const btnMIX = document.getElementById('copyBtnMIX');
             const feedbackBS = document.getElementById('feedbackBS');
             const feedbackCH = document.getElementById('feedbackCH');
+            const feedbackMIX = document.getElementById('feedbackMIX');
 
             // ===== Функция копирования =====
             async function copyToClipboard(text) {
@@ -675,6 +690,11 @@
             btnCH.addEventListener('click', async () => {
                 const success = await copyToClipboard(linkCH);
                 if (success) showFeedback(feedbackCH);
+            });
+
+            btnMIX.addEventListener('click', async () => {
+                const success = await copyToClipboard(linkMIX);
+                if (success) showFeedback(feedbackMIX);
             });
         });
     </script>
