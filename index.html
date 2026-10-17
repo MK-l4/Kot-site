@@ -3,700 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>БУНКЕР КОТА | VPN • PROXY TG</title>
+    <title>Прокси бейджи</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-        }
-
+        * { box-sizing: border-box; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
         body {
-            background: #030303;
+            background: #0f172a;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            color: #e0e0e0;
-            background-image: radial-gradient(circle at 50% 0%, #1a0f00 0%, #030303 60%);
+            margin: 0;
+            padding: 20px 15px;
         }
-
-        /* Основной контейнер */
         .container {
-            max-width: 480px;
+            max-width: 900px;
             width: 100%;
-            background: #0a0a0a;
-            border-radius: 2.5rem;
-            padding: 1.5rem;
-            box-shadow: 0 0 0 1px #2a1a0a, 0 0 40px rgba(255, 140, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
+            background: #1e293b;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 24px 20px;
         }
-
-        /* Шапка */
-        .header {
-            background: linear-gradient(180deg, #140c04 0%, #0a0a0a 100%);
-            border-radius: 2rem;
-            padding: 1.5rem 1rem 1.2rem;
-            border: 1px solid #3a220d;
-            box-shadow: 0 0 0 1px #1f1306 inset, 0 10px 20px rgba(0,0,0,0.8);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
-        .icon-paw svg {
-            width: 32px;
-            height: 32px;
-            stroke: #ff8c00;
-            fill: none;
-            stroke-width: 1.8;
-            filter: drop-shadow(0 0 6px #ff8c00);
-        }
-
-        .badge-cat {
-            background: #1f1408;
-            border: 1px solid #ff8c00;
-            color: #ff8c00;
-            padding: 0.3rem 0.8rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
+        h1 {
+            font-size: 1.4rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            box-shadow: 0 0 10px rgba(255, 140, 0, 0.2);
+            color: #f1f5f9;
+            margin: 0 0 8px 0;
         }
-
-        .badge-cat svg {
-            width: 14px;
-            height: 14px;
-            stroke: #ff8c00;
-            fill: none;
-            stroke-width: 2;
-        }
-
-        /* Кот */
-        .cat-image {
-            width: 160px;
-            height: 160px;
-            background: #000;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            border: 2px solid #ff8c00;
-            box-shadow: 0 0 25px rgba(255, 140, 0, 0.3), 0 0 50px rgba(255, 140, 0, 0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cat-image svg {
-            width: 100px;
-            height: 100px;
-            stroke: #ff8c00;
-            fill: none;
-            stroke-width: 1.2;
-            filter: drop-shadow(0 0 12px rgba(255, 140, 0, 0.5));
-        }
-
-        .title-main {
-            font-size: 2.1rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: #fff;
-            text-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
-            margin-bottom: 0.2rem;
-            text-align: center;
-        }
-
-        .title-sub {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #ff8c00;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
-
-        .title-desc {
-            font-size: 0.8rem;
-            color: #aaa;
-            text-align: center;
-            letter-spacing: 0.5px;
-        }
-
-        /* Карточки */
-        .card {
-            background: #0a0a0a;
-            border: 1px solid #2a1a0a;
-            border-radius: 1.5rem;
-            padding: 1.2rem;
-            box-shadow: 0 0 0 1px #1a0f05 inset, 0 5px 15px rgba(0,0,0,0.5);
-        }
-
-        .card-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        .card-row:last-child {
-            border-bottom: none;
-        }
-
-        .card-label {
-            font-size: 0.9rem;
-            color: #ccc;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .card-label svg {
-            width: 20px;
-            height: 20px;
-            stroke: #ff8c00;
-            fill: none;
-            stroke-width: 1.8;
-            flex-shrink: 0;
-        }
-
-        .card-value {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #ff8c00;
-            text-align: right;
-        }
-
-        /* Кнопки */
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            padding: 1rem;
-            border-radius: 1rem;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            border: none;
-            letter-spacing: 0.5px;
-        }
-
-        .btn svg {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-            flex-shrink: 0;
-        }
-
-        .btn-primary {
-            background: linear-gradient(90deg, #1a0f05 0%, #2a1505 100%);
-            color: #ff8c00;
-            border: 1px solid #ff8c00;
-            box-shadow: 0 0 20px rgba(255, 140, 0, 0.15);
-        }
-
-        .btn-primary:hover {
-            background: #2a1505;
-            box-shadow: 0 0 30px rgba(255, 140, 0, 0.3);
-            transform: scale(1.02);
-        }
-
-        .btn-primary:active {
-            transform: scale(0.98);
-        }
-
-        .btn-secondary {
-            background: #111;
-            color: #ff8c00;
-            border: 1px solid #3a220d;
-        }
-
-        .btn-secondary:hover {
-            background: #1a1a1a;
-            border-color: #ff8c00;
-        }
-
-        .hint-text {
-            font-size: 0.7rem;
-            color: #666;
-            text-align: center;
-            margin-top: 0.5rem;
+        .subhead {
+            color: #94a3b8;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
             line-height: 1.4;
         }
-
-        /* Подвал */
-        .footer {
+        .input-group {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 0.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid #1a1a1a;
-        }
-
-        .footer-text {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #ccc;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .footer-heart svg {
-            width: 20px;
-            height: 20px;
-            stroke: #ff8c00;
-            fill: none;
-            stroke-width: 2;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-            100% { transform: scale(1); }
-        }
-
-        .footer-icon svg {
-            width: 28px;
-            height: 28px;
-            stroke: #ff8c00;
-            fill: none;
-            stroke-width: 1.8;
-            filter: drop-shadow(0 0 6px #ff8c00);
-        }
-
-        /* Утилиты */
-        .text-center { text-align: center; }
-        .mt-1 { margin-top: 0.5rem; }
-        .mb-1 { margin-bottom: 0.5rem; }
-
-        /* Анимация для скопированного текста */
-        .copy-feedback {
-            color: #4caf50;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-            margin-top: 5px;
-            height: 18px;
-        }
-        .copy-feedback.show {
-            opacity: 1;
-        }
-
-        /* Стили для разделов подписки */
-        .sub-section {
-            margin-bottom: 1rem;
-        }
-        .sub-section:last-child {
-            margin-bottom: 0;
-        }
-        .sub-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #ccc;
-            text-align: center;
-            margin-bottom: 0.6rem;
-        }
-
-        /* Блок поддержки */
-        .support-card {
-            text-align: center;
-        }
-
-        .support-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: #fff;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .support-title svg {
-            width: 22px;
-            height: 22px;
-            stroke: #ff8c00;
-            fill: none;
-            stroke-width: 1.8;
-        }
-
-        .support-btn {
-            background: linear-gradient(90deg, #1a0f05 0%, #2a1505 100%);
-            color: #ff8c00;
-            border: 1px solid #ff8c00;
-            box-shadow: 0 0 20px rgba(255, 140, 0, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-wrap: wrap;
             gap: 10px;
-            width: 100%;
-            padding: 1rem;
-            border-radius: 1rem;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            background: #0f172a;
+            padding: 16px;
+            border-radius: 14px;
+            border: 1px solid #334155;
         }
-
-        .support-btn svg {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-            flex-shrink: 0;
-        }
-
-        .support-btn:hover {
-            background: #2a1505;
-            box-shadow: 0 0 30px rgba(255, 140, 0, 0.3);
-            transform: scale(1.02);
-        }
-
-        .support-btn:active {
-            transform: scale(0.98);
-        }
-
-        .support-footer {
-            margin-top: 1rem;
+        .input-group input, .input-group textarea {
+            flex: 1 1 200px;
+            padding: 12px 16px;
+            border: 1.5px solid #334155;
+            border-radius: 10px;
             font-size: 0.9rem;
-            color: #aaa;
+            background: #1e293b;
+            color: #f1f5f9;
+            outline: none;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+        .input-group textarea {
+            resize: vertical;
+            min-height: 80px;
+            width: 100%;
+        }
+        .input-group input:focus, .input-group textarea:focus {
+            border-color: #3b82f6;
+        }
+        .input-group input::placeholder, .input-group textarea::placeholder { color: #64748b; }
+        .input-group button {
+            padding: 12px 24px;
+            background: #3b82f6;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .input-group button:hover { background: #2563eb; }
+        .input-group button.btn-mass {
+            background: #10b981;
+        }
+        .input-group button.btn-mass:hover { background: #059669; }
+
+        .output-box {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 14px;
+            padding: 20px;
+            min-height: 100px;
+            overflow-x: hidden; /* Защита от вылезания */
+        }
+        .output-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #64748b;
+            font-weight: 700;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 6px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
+            gap: 10px;
+        }
+        .output-label .count {
+            background: #3b82f6;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
         }
 
-        .support-footer svg {
-            width: 16px;
-            height: 16px;
-            stroke: #ff8c00;
-            fill: none;
-            stroke-width: 2;
-            animation: pulse 1.5s infinite;
+        /* Контейнер для текста */
+        .badges-line {
+            display: block;
+            line-height: 1.6;
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.85rem;
+            color: #cbd5e1;
         }
 
-        /* Адаптивность */
-        @media (max-width: 450px) {
-            .container { padding: 1rem; }
-            .title-main { font-size: 1.7rem; }
-            .title-sub { font-size: 0.8rem; }
-            .cat-image { width: 130px; height: 130px; }
-            .cat-image svg { width: 80px; height: 80px; }
-            .card-label { font-size: 0.8rem; }
-            .card-label svg { width: 18px; height: 18px; }
-            .card-value { font-size: 0.8rem; }
-            .btn { font-size: 0.9rem; padding: 0.9rem; }
-            .support-footer { font-size: 0.8rem; }
+        /* Блок одного бейджа, чтобы он не слипался с соседним */
+        .badge-item {
+            display: inline;
+            margin-bottom: 8px; /* Отступ снизу для мобилок */
         }
+
+        /* Ссылка внутри строки */
+        .badge-link {
+            color: #60a5fa;
+            text-decoration: none;
+            word-break: break-all; /* Ссылка переносится по буквам, если длинная */
+        }
+        .badge-link:hover { text-decoration: underline; }
+
+        /* Текст стиля */
+        .style-text.red { color: #f87171; font-weight: 600; }
+        .style-text.green { color: #4ade80; font-weight: 600; }
+        .style-text.blue { color: #60a5fa; font-weight: 600; }
+
+        /* Разделитель */
+        .separator {
+            color: #64748b;
+            margin: 0 8px;
+            font-weight: 300;
+            white-space: nowrap; /* Чтобы "|" не отрывался от текста */
+        }
+
+        /* Кнопка удаления (крестик) */
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #475569;
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 0 4px;
+            margin-left: 6px;
+            line-height: 1;
+            transition: 0.15s;
+            vertical-align: middle;
+        }
+        .remove-btn:hover { color: #ef4444; }
+
+        .empty {
+            color: #64748b;
+            font-style: italic;
+            font-size: 0.9rem;
+            font-family: system-ui, sans-serif;
+        }
+        .actions {
+            margin-top: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .actions button {
+            padding: 10px 16px;
+            background: #334155;
+            border: none;
+            border-radius: 10px;
+            color: #cbd5e1;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .actions button:hover { background: #475569; color: #f1f5f9; }
+        .actions button.danger:hover { background: #7f1d1d; color: #fca5a5; }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <!-- Шапка -->
-        <div class="header">
-            <div class="header-top">
-                <div class="icon-paw">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="8" r="2.5"/>
-                        <circle cx="7" cy="12" r="2"/>
-                        <circle cx="17" cy="12" r="2"/>
-                        <circle cx="9.5" cy="16" r="2"/>
-                        <circle cx="14.5" cy="16" r="2"/>
-                    </svg>
-                </div>
-                <div class="badge-cat">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        <path d="M9 12l2 2 4-4"/>
-                    </svg>
-                    Бункер Кота
-                </div>
-            </div>
-            
-            <div class="cat-image">
-                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6 7L4 2l4 2"/>
-                    <path d="M18 7l2-5-4 2"/>
-                    <circle cx="12" cy="13" r="7"/>
-                    <circle cx="9.5" cy="12" r="1.2" fill="#ff8c00" stroke="none"/>
-                    <circle cx="14.5" cy="12" r="1.2" fill="#ff8c00" stroke="none"/>
-                    <path d="M12 15l-1 1h2l-1-1z" fill="#ff8c00" stroke="none"/>
-                    <path d="M5 12h3"/>
-                    <path d="M16 12h3"/>
-                    <path d="M4 15h3"/>
-                    <path d="M17 15h3"/>
-                </svg>
-            </div>
-            
-            <div class="title-main">БУНКЕР КОТА</div>
-            <div class="title-sub">VPN • PROXY TG</div>
-            <div class="title-desc">Твой доступ к свободному интернету</div>
-        </div>
-
-        <!-- Информация -->
-        <div class="card">
-            <div class="card-row">
-                <div class="card-label">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="5" y="2" width="14" height="20" rx="2"/>
-                        <line x1="12" y1="18" x2="12" y2="18.01"/>
-                    </svg>
-                    Устройство
-                </div>
-                <div class="card-value">∞</div>
-            </div>
-            <div class="card-row">
-                <div class="card-label">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="2" y1="12" x2="22" y2="12"/>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                    </svg>
-                    О СЕРВЕРАХ
-                </div>
-                <div class="card-value">МНОГО СЕРВЕРОВ</div>
-            </div>
-            <div class="card-row">
-                <div class="card-label">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        <path d="M9 12l2 2 4-4"/>
-                    </svg>
-                    Обходит все блокировки
-                </div>
-                <div class="card-value"></div>
-            </div>
-            <div class="card-row">
-                <div class="card-label">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91 0z"/>
-                        <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-                        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-                        <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-                    </svg>
-                    VPN / MTProto / Web Proxy / VLESS
-                </div>
-                <div class="card-value"></div>
-            </div>
-        </div>
-
-        <!-- Получить подписки -->
-        <div class="card">
-            <div class="text-center mb-1" style="font-size: 1.05rem; font-weight: 600;">
-                Для того чтобы получить подписку <span style="color: #ff8c00;">↓</span>
-            </div>
-            
-            <!-- БС -->
-            <div class="sub-section">
-                <button class="btn btn-primary" id="copyBtnBS">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                    </svg>
-                    Получить Подписку Бс
-                </button>
-                <div class="copy-feedback" id="feedbackBS">✅ Скопировано!</div>
-            </div>
-
-            <!-- ЧС -->
-            <div class="sub-section">
-                <button class="btn btn-primary" id="copyBtnCH">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                    </svg>
-                    Получить подписку ЧС
-                </button>
-                <div class="copy-feedback" id="feedbackCH">✅ Скопировано!</div>
-            </div>
-
-            <!-- MIX -->
-            <div class="sub-section">
-                <button class="btn btn-primary" id="copyBtnMIX">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                    </svg>
-                    Получить подписку MIX
-                </button>
-                <div class="copy-feedback" id="feedbackMIX">🚀 Скопировано!</div>
-            </div>
-            
-            <div class="hint-text">
-                Нажмите, чтобы скопировать ссылку<br>и получить доступ
-            </div>
-        </div>
-
-        <!-- Следить за новостями -->
-        <div class="card">
-            <div class="text-center mb-1" style="font-size: 1.05rem; font-weight: 600;">
-                Вы можете следовать за новостями
-            </div>
-            
-            <a href="https://t.me/BUNKER_KOTA" target="_blank" class="btn btn-secondary">
-                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                    <circle cx="12" cy="12" r="3"/>
-                </svg>
-                СЛЕДИТЬ
-            </a>
-            
-            <div class="hint-text">
-                Будь в курсе всех обновлений и новых точек
-            </div>
-        </div>
-
-        <!-- Поддержать проект -->
-        <div class="card support-card">
-            <div class="support-title">
-                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
-                    <line x1="1" y1="10" x2="23" y2="10"/>
-                </svg>
-                Поддержать проект 💳
-            </div>
-            
-            <a href="https://finance.ozon.ru/apps/sbp/ozonbankpay/019ee311-5579-752c-81a5-f5bda3055dd3" target="_blank" class="support-btn">
-                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                </svg>
-                Поддержать 💳
-            </a>
-            
-            <div class="support-footer">
-                Мы ценим каждую вашу копейку
-                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                </svg>
-                спасибо вам
-            </div>
-        </div>
-
-        <!-- Подвал -->
-        <div class="footer">
-            <div class="footer-text">
-                Спасибо 
-                <span class="footer-heart">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                    </svg>
-                </span> 
-                что вы с нами
-            </div>
-            <div class="footer-icon">
-                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="8" r="2.5"/>
-                    <circle cx="7" cy="12" r="2"/>
-                    <circle cx="17" cy="12" r="2"/>
-                    <circle cx="9.5" cy="16" r="2"/>
-                    <circle cx="14.5" cy="16" r="2"/>
-                </svg>
-            </div>
-        </div>
+<div class="container">
+    <h1>🔗 Прокси бейджи</h1>
+    <div class="subhead">
+        Строго по <b>три</b> бейджа в ряд через <code>|</code>.<br>
+        Формат: <code>Название - Ссылка - style:цвет</code>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    <!-- Поле для названия -->
+    <div class="input-group">
+        <input type="text" id="nameInput" placeholder="Название (напр. Прокси)" value="Котикам" style="flex: 1 1 100%;">
+    </div>
+
+    <!-- Массовое добавление -->
+    <div class="input-group" style="flex-direction: column; align-items: stretch;">
+        <textarea id="massInput" placeholder="Вставьте ссылки (каждую с новой строки или сплошным текстом)..."></textarea>
+        <button id="massBtn" class="btn-mass" style="align-self: flex-start; margin-top: 8px;">📋 Добавить списком</button>
+    </div>
+
+    <div class="output-box">
+        <div class="output-label">
+            📋 Бейджи <span class="count" id="badgeCount">0</span>
+        </div>
+        <!-- Сюда рендерятся бейджи -->
+        <div class="badges-line" id="badgesContainer">
+            <span class="empty">Пока пусто. Добавьте бейдж выше.</span>
+        </div>
+        <div class="actions">
+            <button id="copyBtn">📋 Скопировать всё</button>
+            <button id="clearBtn" class="danger">🗑 Очистить</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let badges = [];
+    const colors = ['red', 'green', 'blue'];
+    let currentColorIndex = 0;
+    const PER_ROW = 3; // По сколько бейджей в ряду
+
+    const nameInput = document.getElementById('nameInput');
+    const massInput = document.getElementById('massInput');
+    const massBtn = document.getElementById('massBtn');
+    const container = document.getElementById('badgesContainer');
+    const badgeCount = document.getElementById('badgeCount');
+    const copyBtn = document.getElementById('copyBtn');
+    const clearBtn = document.getElementById('clearBtn');
+
+    // Функция форматирования одного бейджа в строку
+    function formatBadge(b) {
+        return `${b.name} - ${b.link} - style:${b.style}`;
+    }
+
+    // Отрисовка на экране
+    function render() {
+        container.innerHTML = '';
+
+        if (badges.length === 0) {
+            container.innerHTML = '<span class="empty">Пока пусто. Добавьте бейдж выше.</span>';
+            badgeCount.textContent = '0';
+            return;
+        }
+
+        badgeCount.textContent = badges.length;
+
+        for (let i = 0; i < badges.length; i += PER_ROW) {
+            const groupEnd = Math.min(i + PER_ROW, badges.length);
             
-            // ===== Ссылки для копирования =====
-            const linkBS = 'https://hub.mos.ru/akelladejavu/bunker/-/raw/main/WHITE_LIST.txt';
-            const linkCH = 'https://hub.mos.ru/akelladejavu/bunker/-/raw/main/BLACK_LIST.txt';
-            const linkMIX = 'https://hub.mos.ru/akelladejavu/bunker/-/raw/main/BLWL_MIX.txt';
+            // Выводим бейджи в текущей строке
+            for (let j = i; j < groupEnd; j++) {
+                appendBadgeDOM(container, badges[j], j);
 
-            // ===== Элементы =====
-            const btnBS = document.getElementById('copyBtnBS');
-            const btnCH = document.getElementById('copyBtnCH');
-            const btnMIX = document.getElementById('copyBtnMIX');
-            const feedbackBS = document.getElementById('feedbackBS');
-            const feedbackCH = document.getElementById('feedbackCH');
-            const feedbackMIX = document.getElementById('feedbackMIX');
-
-            // ===== Функция копирования =====
-            async function copyToClipboard(text) {
-                try {
-                    await navigator.clipboard.writeText(text);
-                    return true;
-                } catch (err) {
-                    // Fallback
-                    const textArea = document.createElement('textarea');
-                    textArea.value = text;
-                    textArea.style.position = 'fixed';
-                    textArea.style.opacity = '0';
-                    document.body.appendChild(textArea);
-                    textArea.select();
-                    try {
-                        document.execCommand('copy');
-                        document.body.removeChild(textArea);
-                        return true;
-                    } catch (e) {
-                        document.body.removeChild(textArea);
-                        return false;
-                    }
+                // Разделитель "|" ставим после каждого бейджа, КРОМЕ последнего в строке
+                if (j < groupEnd - 1) {
+                    const sep = document.createElement('span');
+                    sep.className = 'separator';
+                    sep.textContent = '|';
+                    container.appendChild(sep);
                 }
             }
 
-            // ===== Показать уведомление =====
-            function showFeedback(element) {
-                element.classList.add('show');
-                setTimeout(() => {
-                    element.classList.remove('show');
-                }, 2000);
-            }
+            // Перенос строки после каждого ряда
+            container.appendChild(document.createElement('br'));
+            container.appendChild(document.createElement('br')); // Двойной перенос для мобилок
+        }
+    }
 
-            // ===== Обработчики кнопок =====
-            btnBS.addEventListener('click', async () => {
-                const success = await copyToClipboard(linkBS);
-                if (success) showFeedback(feedbackBS);
-            });
+    // Добавление элементов в DOM
+    function appendBadgeDOM(parent, badge, idx) {
+        // Оборачиваем каждый бейдж в span, чтобы управлять отступами
+        const wrapper = document.createElement('span');
+        wrapper.className = 'badge-item';
 
-            btnCH.addEventListener('click', async () => {
-                const success = await copyToClipboard(linkCH);
-                if (success) showFeedback(feedbackCH);
-            });
+        const nameSpan = document.createElement('span');
+        nameSpan.style.fontWeight = 'bold';
+        nameSpan.style.color = '#e2e8f0';
+        nameSpan.textContent = badge.name;
+        wrapper.appendChild(nameSpan);
 
-            btnMIX.addEventListener('click', async () => {
-                const success = await copyToClipboard(linkMIX);
-                if (success) showFeedback(feedbackMIX);
-            });
+        wrapper.appendChild(document.createTextNode(' - '));
+
+        const link = document.createElement('a');
+        link.className = 'badge-link';
+        link.href = badge.link;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = badge.link;
+        wrapper.appendChild(link);
+
+        wrapper.appendChild(document.createTextNode(' - '));
+
+        const styleSpan = document.createElement('span');
+        styleSpan.className = 'style-text ' + badge.style;
+        styleSpan.textContent = 'style:' + badge.style;
+        wrapper.appendChild(styleSpan);
+
+        const rm = document.createElement('button');
+        rm.className = 'remove-btn';
+        rm.innerHTML = '&times;';
+        rm.title = 'Удалить';
+        rm.addEventListener('click', () => {
+            badges.splice(idx, 1);
+            render();
         });
-    </script>
+        wrapper.appendChild(rm);
+
+        parent.appendChild(wrapper);
+    }
+
+    // Массовое добавление
+    function addMass() {
+        let text = massInput.value.trim();
+        if (!text) return;
+
+        // МАГИЯ ОЧИСТКИ: Убираем скрытые переносы строк (URL-encoded), которые слипают ссылки
+        text = text.replace(/%0A/g, '\n').replace(/%0D/g, '\n');
+        
+        // Разбиваем на строки, убираем пустые места, ищем только ссылки
+        const links = text.split('\n').map(l => l.trim()).filter(l => l.startsWith('http'));
+
+        // Если вставили сплошняком без переносов, но со скрытыми символами
+        let finalLinks = [];
+        links.forEach(l => {
+             // Если внутри строки всё ещё есть "https://", разбиваем её
+             if (l.indexOf('https://') !== l.lastIndexOf('https://')) {
+                 const parts = l.split('https://');
+                 parts.forEach((p, index) => {
+                     if (index > 0) finalLinks.push('https://' + p);
+                 });
+             } else {
+                 finalLinks.push(l);
+             }
+        });
+
+        finalLinks.forEach(link => {
+            const name = nameInput.value.trim() || 'Котикам';
+            const style = colors[currentColorIndex];
+            badges.push({ name, link, style });
+            currentColorIndex = (currentColorIndex + 1) % colors.length; // Цикл: red -> green -> blue
+        });
+
+        render();
+        massInput.value = ''; 
+    }
+
+    massBtn.addEventListener('click', addMass);
+
+    // КОПИРОВАНИЕ (Формирует текст строго как на экране)
+    copyBtn.addEventListener('click', () => {
+        if (badges.length === 0) return;
+        
+        let lines = [];
+        
+        for (let i = 0; i < badges.length; i += PER_ROW) {
+            const groupEnd = Math.min(i + PER_ROW, badges.length);
+            let rowItems = [];
+            
+            for (let j = i; j < groupEnd; j++) {
+                rowItems.push(formatBadge(badges[j]));
+            }
+            
+            lines.push(rowItems.join(' | '));
+        }
+        
+        const finalText = lines.join('\n');
+        
+        navigator.clipboard.writeText(finalText).then(() => {
+            const original = copyBtn.textContent;
+            copyBtn.textContent = '✅ Скопировано!';
+            setTimeout(() => copyBtn.textContent = original, 1500);
+        }).catch(() => {
+            const ta = document.createElement('textarea');
+            ta.value = finalText;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            ta.remove();
+            copyBtn.textContent = '✅ Скопировано!';
+            setTimeout(() => copyBtn.textContent = '📋 Скопировать всё', 1500);
+        });
+    });
+
+    clearBtn.addEventListener('click', () => {
+        if (badges.length === 0) return;
+        if (confirm('Удалить все бейджи?')) {
+            badges = [];
+            currentColorIndex = 0;
+            render();
+        }
+    });
+
+    render();
+</script>
 </body>
 </html>
